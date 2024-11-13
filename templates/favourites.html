@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+
+{% block mainContent %}
+<h2>Favourites:</h2>
+{% for item in favourites %}
+<h3><a href="/truck?tid={{item['truck_id']}}">{{item['name']}}</a></h3>
+<div>Category: {{item['category']}}</div>
+<div>{{item['bio']}}</div>
+<div>Website: <a href="{{item['website']}}">{{item['website']}}</a></div>
+&nbsp
+{% endfor %}
+{% endblock %}

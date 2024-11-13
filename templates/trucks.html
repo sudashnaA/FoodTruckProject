@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+
+{% block mainContent %}
+    <div class="row">
+        <div class="col">
+            {% for message in get_flashed_messages() %}
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+<h2>{{trucksocial['name']}}</h2>
+<h4>Social Media:</h4>
+<div>Facebook: <a href="{{trucksocial['facebook_url']}}">{{trucksocial['facebook_url']}}</a></div>
+<div>Instagram: <a>{{trucksocial['instagram_handle']}}</a></div>
+<div>Twitter: <a>{{trucksocial['twitter_handle']}}</a></div>
+
+{% if tid == favconfirm['truck_id'] %}
+<button type="button" class="btn btn-danger"><a href="/truck?tid={{trucksocial['truck_id']}}&ufav={{trucksocial['truck_id']}}" style="text-decoration:none; color:#FFFFFF;">Unfavourite</a></button>
+{% else %}
+<button type="button" class="btn btn-success"><a href="/truck?tid={{trucksocial['truck_id']}}&fid={{trucksocial['truck_id']}}" style="text-decoration:none; color:#FFFFFF;">Favourite</a></button>
+{% endif %}
+
+{% endblock %}
+

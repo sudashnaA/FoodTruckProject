@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block mainContent %}
+<h4>Search Result:</h4>
+{% for item in searchresult %}
+<strong><h2><a href="/truck?tid={{item['truck_id']}}">{{item['name']}}</a></h2></strong>
+    <div><u>Category: {{item['category']}}</u></div>
+    <div>{{item['bio']}}</div>
+    <div>Website: <a href="{{item['website']}}">{{item['website']}}</a></div>
+    &nbsp
+
+{% endfor %}
+{% endblock %}

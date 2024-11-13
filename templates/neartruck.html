@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+
+{% block mainContent %}
+<h2>Upcoming Bookings</h2>
+<p>Come and visit a upcoming booking</p>
+{% for item in upcoming %}
+&nbsp
+<h6><a href="/truck?tid={{item['truck_id']}}">{{item['title']}}</a></h6>
+<div>{{item['title:1']}}</div>
+<div>{{item['street']}} {{item['suburb']}} {{item['postcode']}}</div>
+<div>Start: {{item['start']}}</div>
+<div>Finish: {{item['finish']}}</div>
+
+{% endfor %}
+{% endblock %}

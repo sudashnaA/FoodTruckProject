@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block mainContent %}
+<h4>Search Result:</h4>
+    {% for item in searchresult %}
+        <div><strong>{{item['title']}}</strong></div>
+        <div>{{item['description']}}</div>
+        <div><u>{{item['street']}}
+             {{item['suburb']}}
+             {{item['postcode']}}</u></div>
+    &nbsp
+{% endfor %}
+{% endblock %}
